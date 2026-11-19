@@ -1,0 +1,27 @@
+{
+  "name": "react-search-filter-sort",
+  "version": "0.1.0",
+  "description": "Tiny headless React hook for search, filter, sort and pagination of lists. Zero dependencies, TypeScript types, Unicode-safe (works with Hindi, Gujarati and other non-English text).",
+  "keywords": ["react", "hook", "search", "filter", "sort", "pagination", "list", "headless", "typescript", "multilingual", "hindi", "gujarati", "unicode"],
+  "author": "VIVEK PARMAR",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/V-Flash/react-search-filter-sort.git" },
+  "bugs": { "url": "https://github.com/V-Flash/react-search-filter-sort/issues" },
+  "homepage": "https://github.com/V-Flash/react-search-filter-sort#readme",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./src/index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "import": "./src/index.js", "require": "./dist/index.cjs" }
+  },
+  "files": ["src", "dist", "index.d.ts", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "peerDependencies": { "react": ">=17" },
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --format=cjs --external:react --outfile=dist/index.cjs",
+    "test": "node --test",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": { "esbuild": "^0.25.0", "react": "^18.3.1", "react-dom": "^18.3.1" }
+}
